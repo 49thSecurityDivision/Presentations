@@ -1,0 +1,6 @@
+Vagrant.configure("2") do |config|
+	config.vm.box = "49thsd/kali-linux-2.0-amd64"
+	config.vm.box_url = "http://vagrant.49sd.com/red.box"
+	config.vm.box_download_checksum_type = "sha1"
+	config.vm.box_download_checksum_checksum = "d0fb545360986df4a9d73102f8732b9236503330"
+end
