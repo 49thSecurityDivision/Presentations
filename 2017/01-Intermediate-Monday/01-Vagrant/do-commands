@@ -1,0 +1,5 @@
+updateip:doctl -t "$(cat ~/all.pass| grep 'do:4' | cut -d ':' -f 3-)" compute domain records update "49sd.com" --record-id "$(doctl -t "$(cat ~/all.pass| grep 'do:4' | cut -d ':' -f 3-)" compute domain records  list "49sd.com" | grep vagrant | cut -d ' ' -f 1)" --record-data "$(doctl  compute droplet get $(doctl compute droplet list | grep 49th-vagrant | cut -d ' ' -f 1) --format 'PublicIPv4' --no-header)"
+power-ssh:doctl  compute droplet-action power-on $(doctl compute droplet list | grep 49th-vagrant | cut -d ' ' -f 1) --wait && ssh -i ~/.ssh/do root@$(doctl compute droplet get $(doctl compute droplet list | grep 49th-vagrant | cut -d ' ' -f 1) --format "PublicIPv4" | grep -v "[[:alpha:]]")
+get-ip:doctl compute droplet get $(doctl compute droplet list | grep 49th-vagrant | cut -d ' ' -f 1) --format "PublicIPv4" --no-header
+ssh-ip:ssh -i ~/.ssh/do root@$(doctl compute droplet get $(doctl compute droplet list | grep 49th-vagrant | cut -d ' ' -f 1) --format "PublicIPv4" --no-header)
+power-off:doctl  compute droplet-action power-off $(doctl compute droplet list | grep 49th-vagrant | cut -d ' ' -f 1) --wait

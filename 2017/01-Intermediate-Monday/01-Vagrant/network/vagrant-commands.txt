@@ -1,0 +1,1 @@
+vagrant ssh -- -X -C -g -Y -L 8080:localhost:443
