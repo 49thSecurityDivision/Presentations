@@ -403,6 +403,14 @@ Tax Record and Property lookups
 	Sometimes difficult to find an owner without a paid source or an 
 	individual counting record
 	Zillow ==> can find previous real state owners 
+## Goals for People Hunting
+	*Full_name
+	*DOB
+	*Home Address
+	*Phone Numbers
+	*Email Addresses
+	*Family member
+	*Social media profiles
 
 Birthday searching
 	-Pipl ==> allows you to search people based on their bday, namem city..
