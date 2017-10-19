@@ -403,3 +403,6 @@ Tax Record and Property lookups
 	Sometimes difficult to find an owner without a paid source or an 
 	individual counting record
 	Zillow ==> can find previous real state owners 
+
+Birthday searching
+	-Pipl ==> allows you to search people based on their bday
