@@ -1,0 +1,409 @@
+
+
+Day 1
+_____________________________________________________________________________
+
+osintframework.com
+
+Passive OSINT: 
+	No direct interaction with the target ==> they should not be a ble to 
+	tell you were looking at them
+		WOIS Data
+		Shodan
+		Google Searching
+		Public Social Media Sites
+		Job Posting
+		Internet archives
+	
+Active OSINT:
+	-Active techniques ==>WILL be discovered
+	-Extremelu noisy, direct communication with target ==> packets
+	-sent to target
+		Port Scanning
+		Social Media Notifications
+		Caller ID logs
+		DNS brute force
+Semi Passive OSINT:
+	-Interaction with the target, but mimicking normal behavior
+	-Logs or notifications will be generated, but pass as normal traffic
+		Website visit
+		Normal DNS requests
+		Viewing linkdn (maybe)
+
+Always think: What do I look like from the other site's perspective
+
+
+Why OSINT?
+	 Infosec:
+	-Understand attack surface
+	-Identify vulnerabilities
+	-Help with attack attribution
+	-Discover data leaks
+	-Helps get a better feel of who the attacker is, theire skillset, etc.
+
+	Business:
+	-Vetting potential hires
+	-Competitive Intelligencce
+	-Fraud or insider investigations
+
+	Personal:
+	-Research neighbours
+	-Being creepy and spooky
+	-Pranks bruh
+
+	Bad usage:
+	-Recon prior to an attack
+	-Information gatherinf for use in social engineering
+	-Phishing targeting/refinement
+	-BEC: Business Email Compromise
+
+Understand your footprint ==> know what you look like on the internet
+	-Fake data ==> put some fake information out there!
+
+Methodology:
+	
+	-Measure your time
+	-Information discovered through OSINT is often WRONG ==> look for multiple
+	sources:
+		-WARNING: sometimes those databases cascade from each other
+	-Partial confirmations are ok, but be cautious when reporting.
+
+Creating a Research Environment:
+	-Virtual Machines: there are OSINT tools out there, make sure to use
+	those (and browsers used for research) from a VM
+		Base VMs
+			W 7/ 8/ 10
+			Unix / Linux
+			Kali / Buscador
+		NEVER use Base VMs ==> clone it and use that (then destroy or copy to hard drive
+		Schedule updates, at least once per month.
+		Snapshotsa are useful though ==> powerthem off and make sure
+		they're all up to date.
+			OPSec fingerprint ==> RESEARCH SOME MORE ON THIS
+			Use a different VM and destroy it after each individual
+		Update tools
+
+	Useful Tools:
+	
+		Know them, test them, then test again ==> you can never be
+		too sure they'll do what you need them to do.
+		
+	=>>>>>>	-Thread Metrix ==> useful blue team tool
+		
+		Start with yout favourite one or two resources
+		Test something new, then compare results
+		Be especially cautious when performing active recon
+		
+		Active tools:
+			-Always test against known data, test data
+			-Make testing accounts ==> DONT GET BURNED
+
+		Browser wars: most browsers will do well enough, it depends
+		on who your target is
+			Epic
+			Firefox ==> has a ton of cool extensions
+			Chrome
+		Use plugins
+			Nimbus Screen Capture- Browser screenshots
+			Link Gopher- Captures, sorts, and de-dupes all links on page
+			Reverse Image Search
+		=>>>>>>	Imacros- Automate firefox
+		
+		You can make your own tools, but they MUST have results that
+		can be reproduced ==> screenshot EVERYTHING!
+
+		CHROME:
+		=>>>>> hunch.ly ==> best paid tool ==> turn it on whenever,
+		then just tell it what you're working on
+			Will keep every website you visit on a database
+			Fully INDEXED
+		Lightshots- Screenshots
+		Google translate
+		
+		BRAVE or EPIC
+		Great privacy browser
+		Quick dev updates
+		Getting very fast
+
+
+		FIREFOX PRIVACY BUILDS: 
+		https://www.privacytools.io/	
+	VPNs
+		-Always use
+		-Mullvad
+		-NordVPN
+		-Freedome (it's been popped)
+		-Decide where the VPN will originate
+		-Host machine or Guest Virtual Machine
+		-Install VPN software accordingly
+	Document EVERYTHING:
+		
+		-Plan your documentation and organization
+		-Take notes constantly, any text editor that's decent will
+		do ==> document everything you find on your persona
+		-Mind mapping Tools
+		ASCII doc
+		hunch.ly
+	MALTEGO ==> COOL TOOL IN KALI 
+
+OpSec: process of protecting individual pieces od data that could be grouped
+to make a bigger picture.
+	Who is targetting you?
+		Skiddie?, Pro?, Government?
+	TEST OPSEC TOOLS AS MUCH AS POSSIBLE
+	WATCH FOR DNS LEAKS ==> set settings manually and test
+	WATCH FOR IPv6 LEAKS ==> WILL GO ON PARALLEL OF VPN (DISABLE IT)
+
+VPN COnnection Failures:
+	Internet KIll Switch ==> if something stops at the VPN, you'll be alerted/
+	connection will be killed
+	VPNetMon
+	VPNCheck
+	Manually Configure OS settings
+	Firewall Rules
+
+Webtric Leaks
+	WebRTC- Real Time Communication
+	Uses STUN to request your actual IP address
+		Still broken in current browsers ==> CHECK
+panocpclicl.off.org ==> tells you how many LEAK information values your
+browser returned to the site. The higher the value, the more uniqeu you are
+
+
+Browser Fingerprints
+	-Every major company does it ==> over 83% of browsers are uniqeu
+	Up to 94% run Jav and Flash
+
+	Changing fingerprints constantly actually makes you stand out even more
+
+	AVOID Auto-refreshing sites
+
+		browserspy.dk/browser.php
+
+Search and Logs
+	Duck Duck Go ==> browser deicated to privacy
+	Make sure you're not logged into google or any other search engine
+	
+	Consider how your searches will be logged:
+		If you go to badsite.come, don't just logg in look for
+		a company name and then log out
+		Make it look natural 
+
+	Change VPNs from persona to persona, make sure it's not suspicious
+
+
+Persona Creation and Management:
+	Create multpile accounts on each site; LURK hard on each 
+	Use different personas / exit nodes for each
+	Fake accounts may have legal repercussions.
+		-What's the point of your new persona?
+		-Does it have to be a certain age, gender, ethnicity...
+		-Time zones? 
+	
+	Pictures help make your account real ==> find, create, or purchase 
+	some that will fit your persona's look
+		-Avoid stock photos
+
+	Tool: Fake name Generator
+		Pixabay.com ==> use outdoorsy, artsy kind of photos
+	
+	Lunch money pictures ==> extralunchmoney
+
+	Documentation sucks
+		Purpose, Twitter, Phone Numver, VPN Exit, Last Name, bday, VM...
+		Job, picture, address...
+	Password managers like KeePass are usually good, but they also have issues
+	
+EMAIL
+	buy your own domain ==> GMX.com
+	Gmail account requires previous account verification
+	@mailnator email address, use extra characters to avoid guessing
+	cmy*******@mai******.com
+FACEBOOK
+	Immediately upload stuff
+	Immediately join groups, like pages, etc.
+
+	Use facebook games and make some friend through that
+
+
+AUTOMATING OSINT
+	Google Alerts
+		Requires google account
+		Great for monitoring new mentions of your company's name
+		Reuqires yout Google-fu to be on point if it's a common name
+			(-) sign will retrieve everything that does not contain the term
+	https://Visualping.io
+	https://changedetection.com
+
+	Pros:
+		Lazy
+	Cons:
+		Noisy
+		False positives
+		Require luck
+
+	Tools:
+		Datasploit
+			Automates collection for
+				-Domain
+				-Emal Address
+				-Username
+				-Phone number
+			Can be completely passive depending on scan options
+			Many API integrations
+				Shodan
+				censys.io
+				Emaiilhunter
+				Full Contact
+		Spiderfoot
+			Over 100 sources
+			Great Visulization
+			Very responsive dev
+			Lots of FPs on large targets
+		Tinfoleak
+			Social media automation
+			No compleat collection, but it provides a baseline
+		Birdwatcher
+			Twitter information gatherer
+			Can parse URLs and Hashtags
+			Generaates wod clouds based on target's tweets
+			Can map out geo target
+MORE TRAINING
+	https://register.automatingosint.com/
+
+Search Engine
+	Duck Duck GO
+	Bing
+	Others
+
+	Safe search?
+	Private results ==> creepy, google tracking
+	Figure out what seach engine is better for you based on your needs
+
+Know your Operators
+	(-) exclude words
+	site:
+	cache: view the google cache version (pages that may have been removed)
+	related: similar, related sites
+	
+Googel Hacking DB
+	Don't use it as a crutch ==> return ridiculous results
+
+Meta Search engines
+
+	Google CSE ==> create your own specific search engine filters
+	Geolocation matters
+	
+
+Day 2
+_________________________________________________________________________
+
+IOC Pivoting
+
+	Malware ==> common pivot points
+		IPs
+		URLs
+		Strings (functions, comments...)
+		Email Address
+	Phising emails
+		Name
+		Subject
+		IPs
+		Domains
+		Attachment Name
+Attribution
+	Management and employers get really excited, but it's not as easily
+	done as it appears to be.
+	
+Hunting Domains and IPs
+	Reverse IPs and DNS ==> Mnemonic, other stuff in OSINTframework
+		Pivot to the additional IPs discovered to fin more domain
+		names to target
+	ViewDNS.info, Shodan (once you have domain name)
+	DNS brute force (WARNING: LOUD AF)
+		UAT ==> user access test (test server, should not be on
+		the internet. If it is, might wanna test it for weaknesses)
+	Aquatone
+		Open source program, allows you to find IP addresses and 
+		perform several recon tasks
+IP Tools
+	Geolocation (not too accurate, but can be good)
+	Blacklists and reputation lists are a good way to determine
+	if the domain that you just found is malicious or not
+Certificates
+	Censys is really good for hunting based on certificates
+	Same for crt.sh ==> sometimes gives different results
+	so checking it out seems worht it
+Googel Analytics
+	Often used to track vusturs
+	THis ID appends to all the websites you when logged in
+	spyonweb.com allows you to look for those in websites
+Robots.txt
+	Tells search engines and spidets what parts of the web that
+	they are supposed to ignore
+		-May find hiddden gems
+Archives
+	Look at previous saved copies of the site
+		-Find old pivot data, contact info for previous	
+		admins and users, etc.
+	Timetravel.mementoweb.org: metasearch engine for archive webs
+
+
+Hunting People
+	QUick seatch accross major sites for registered usernames
+	Can get luck nad save a lot of time
+	WARNING: some sites are prone to false positives
+		Namechk: lots of false positives, but good visuals
+		Showem: same
+	Github can be used to find technical profiles
+	Amazon Wishlist:
+		Search by username or email
+	General search:
+		Run the username through your favourite search engine
+	People search engines
+		Some are very good, but need confirmation
+			NOTE: PAY ATTENTION TO NICKNAMES, SHORT NAMES...
+			Phone numbers can be used to attempt to reset password
+			USE IT SO IT GIVES YOU THE NAME
+			NOTE: SOME PEOPLE SPELL THEIR NAME BACKWARDS
+
+	CUBIB.COM ==> data crowdsourcing.
+		Especially for contacts
+		YOU CAN CORRUPT THE DATA ON YOURSELF 
+	Neighbor.report ==> allows you to put information down on neighbors
+	(name, job, address...)
+
+	FACE FINDER ==> FINDS PEOPLE IN SOCIAL MEDIA (RUSSIAN)
+	REVERSE IMAGE SEARCH
+Dating Sites
+	Most are based on geollocation and some sort of randomization
+	Can't search directly
+	You need to know rough physical location and what they look like
+		Match
+		eharmony
+		Furry Mate ????? LOOOOL
+METADATA
+	data embedded into images that can reveal some juicy stuff
+		-Camera type
+		-Geolocation
+		-Photographer name / email 
+		-Date ....
+	NOTE: MOST SOCIAL MEDIA WILL STRIP THE METADATA OUT
+Optical Char recognition
+	Extremely useful if viewig scanned documnts
+	Can be finicky, sometimes won't handle angles or shadows right
+
+Wedding sites
+	Are good for finding out a lot of personal information
+
+Fitness Tracking
+	good for finding out geolocations and routines	
+
+Tax Record and Property lookups
+	Sometimes difficult to find an owner without a paid source or an 
+	individual counting record
+	Zillow ==> can find previous real state owners 
+
+Birthday searching
+	-Pipl ==> allows you to search people based on their bday, namem city..
+
