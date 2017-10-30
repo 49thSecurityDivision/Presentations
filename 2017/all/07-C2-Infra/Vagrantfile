@@ -6,8 +6,10 @@ Vagrant.configure("2") do |config|
     winxp.vm.box = "49thsd/winxp-sp1-i386"
   end
   config.vm.define "redir" do |redir|
-    redir.vm.box = "ubuntu/xenial64"
-    redir.vm.network "private_network", ip: "192.168.55.4", virtualbox__intnet: "red_net"
+    redir.vm.box = "49thsd/ubuntu-x64"
+  end
+  config.vm.define "kali" do |kali|
+    kali.vm.box = "49thsd/kali-linux-2017.2-amd64"
   end
   config.vm.define "pf" do |pf|
     pf.vm.box = "49thsd/pfsense2.3.4-amd64"
