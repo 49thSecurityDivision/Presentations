@@ -1,4 +1,15 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
 Vagrant.configure("2") do |config|
-  config.vm.box = "49thsd/kali-linux-2.0-amd64"
-  config.vm.box_url = "http://vagrant.49sd.com/red.box"
+  config.vm.define "winxp" do |winxp|
+    winxp.vm.box = "49thsd/winxp-sp1-i386"
+  end
+  config.vm.define "redir" do |redir|
+    redir.vm.box = "ubuntu/xenial64"
+    redir.vm.network "private_network", ip: "192.168.55.4", virtualbox__intnet: "red_net"
+  end
+  config.vm.define "pf" do |pf|
+    pf.vm.box = "49thsd/pfsense2.3.4-amd64"
+  end
 end
