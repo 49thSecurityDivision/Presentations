@@ -334,84 +334,102 @@ Certificates
 	Censys is really good for hunting based on certificates
 	Same for crt.sh ==> sometimes gives different results
 	so checking it out seems worht it
-Googel Analytics
-	Often used to track vusturs
-	THis ID appends to all the websites you when logged in
-	spyonweb.com allows you to look for those in websites
-Robots.txt
-	Tells search engines and spidets what parts of the web that
-	they are supposed to ignore
-		-May find hiddden gems
-Archives
-	Look at previous saved copies of the site
-		-Find old pivot data, contact info for previous	
+Google Analytics
+	- Often used to track visitors
+	- THis ID appends to all the websites you when logged in
+	- spyonweb.com allows you to look for those in websites
+### Robots.txt
+	- Tells search engines and spidets what parts of the web that
+	- they are supposed to ignore
+		-May find hidden gems
+### Archives
+	- Look at previous saved copies of the site
+		- Find old pivot data, contact info for previous	
 		admins and users, etc.
-	Timetravel.mementoweb.org: metasearch engine for archive webs
+	- Timetravel.mementoweb.org: metasearch engine for archive webs
 
 
-Hunting People
-	QUick seatch accross major sites for registered usernames
-	Can get luck nad save a lot of time
-	WARNING: some sites are prone to false positives
-		Namechk: lots of false positives, but good visuals
-		Showem: same
-	Github can be used to find technical profiles
-	Amazon Wishlist:
-		Search by username or email
-	General search:
-		Run the username through your favourite search engine
-	People search engines
-		Some are very good, but need confirmation
-			NOTE: PAY ATTENTION TO NICKNAMES, SHORT NAMES...
-			Phone numbers can be used to attempt to reset password
-			USE IT SO IT GIVES YOU THE NAME
-			NOTE: SOME PEOPLE SPELL THEIR NAME BACKWARDS
+## Hunting People
+	- Quick seatch accross major sites for registered usernames
+	- Can get luck nad save a lot of time
+	```
+	> WARNING: some sites are prone to false positives
+	>	Namechk: lots of false positives, but good visuals
+	>	Showem: same
+	>
+	- Github can be used to find technical profiles
+	### Amazon Wishlist:
+		- Search by username or email
+	### General search:
+		- Run the username through your favourite search engine
+	### People search engines
+		- Some are very good, but need confirmation
+			>NOTE: PAY ATTENTION TO NICKNAMES, SHORT NAMES...
+			>Phone numbers can be used to attempt to reset password
+			>USE IT SO IT GIVES YOU THE NAME
+			>NOTE: SOME PEOPLE SPELL THEIR NAME BACKWARDS
 
-	CUBIB.COM ==> data crowdsourcing.
-		Especially for contacts
-		YOU CAN CORRUPT THE DATA ON YOURSELF 
-	Neighbor.report ==> allows you to put information down on neighbors
-	(name, job, address...)
+	-CUBIB.COM ==> data crowdsourcing.
+	>	Especially for contacts
+	>	YOU CAN CORRUPT THE DATA ON YOURSELF 
+	-Neighbor.report ==> allows you to put information down on neighbors
+	-(name, job, address...)
 
-	FACE FINDER ==> FINDS PEOPLE IN SOCIAL MEDIA (RUSSIAN)
+	-FACE FINDER ==> FINDS PEOPLE IN SOCIAL MEDIA (RUSSIAN)
 	REVERSE IMAGE SEARCH
-Dating Sites
+### Dating Sites
 	Most are based on geollocation and some sort of randomization
 	Can't search directly
 	You need to know rough physical location and what they look like
 		Match
 		eharmony
 		Furry Mate ????? LOOOOL
-METADATA
-	data embedded into images that can reveal some juicy stuff
+### METADATA
+	-data embedded into images that can reveal some juicy stuff
 		-Camera type
 		-Geolocation
 		-Photographer name / email 
 		-Date ....
-	NOTE: MOST SOCIAL MEDIA WILL STRIP THE METADATA OUT
-Optical Char recognition
-	Extremely useful if viewig scanned documnts
-	Can be finicky, sometimes won't handle angles or shadows right
+	-NOTE: MOST SOCIAL MEDIA WILL STRIP THE METADATA OUT
+### Optical Char recognition
+	-Extremely useful if viewig scanned documnts
+	-Can be finicky, sometimes won't handle angles or shadows right
 
-Wedding sites
-	Are good for finding out a lot of personal information
+### Wedding sites
+	-Are good for finding out a lot of personal information
 
-Fitness Tracking
-	good for finding out geolocations and routines	
+### Fitness Tracking
+	-good for finding out geolocations and routines	
 
-Tax Record and Property lookups
-	Sometimes difficult to find an owner without a paid source or an 
-	individual counting record
-	Zillow ==> can find previous real state owners 
-## Goals for People Hunting
-	*Full_name
-	*DOB
-	*Home Address
-	*Phone Numbers
-	*Email Addresses
-	*Family member
-	*Social media profiles
+### Tax Record and Property lookups
+	-Sometimes difficult to find an owner without a paid source or an 
+	-individual counting record
+	-Zillow ==> can find previous real state owners 
+### Goals for People Hunting
+	-Full_name
+	-DOB
+	-Home Address
+	-Phone Numbers
+	-Email Addresses
+	-Family member
+	-Social media profiles
 
-Birthday searching
+### Birthday searching
 	-Pipl ==> allows you to search people based on their bday, namem city..
 
+## FACEBOOK AND TWITTER PREDICTIONS
+	-Project by the University of Cambridge ==> It's all in osintframework
+
+## More Geolocation
+	-OpenStreetCam ==> similar to google maps in some ways, but also shows you 
+	the inside of buildings and other locations gmaps would usually nor show
+
+	-DRONE THE WORLD ==> picutes taken with drones around the world and uploaded
+
+### Vehicle Records
+	-Hit or miss ==> work similarly to real state property 
+	-Vehicle sales records database
+
+### Flight Records
+	-Specially good for tracking private planes and small flights
+	-Flightaware
