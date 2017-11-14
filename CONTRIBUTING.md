@@ -33,4 +33,4 @@ This folder will be 04 and will be called Conferences-Classes. It will be for pr
 
 
 ## Suggestions
-If there is a topic that has not been discussed/presented. Please submit an [issue](https://github.com/49thSecurityDivision/slideshows/issues) and tag it with the ![Image of Topic Suggestion](https://github.com/49thSecurityDivision/slideshows/labels/Topic%20Suggestion) label
+If there is a topic that has not been discussed/presented. Please submit an [issue](https://github.com/49thSecurityDivision/slideshows/issues) and tag it with the [Topic Suggestion](https://github.com/49thSecurityDivision/slideshows/labels/Topic%20Suggestion) label
