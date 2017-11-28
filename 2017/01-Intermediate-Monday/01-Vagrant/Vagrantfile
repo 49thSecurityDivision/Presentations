@@ -1,4 +1,3 @@
 Vagrant.configure("2") do |config|
-  config.vm.box = "49thsd/kali-linux-2.0-amd64"
-  config.vm.box_url = "http://vagrant.49sd.com/red.box"
+  config.vm.box = "49thsd/kali-linux-2017.2-amd64"
 end
