@@ -8,19 +8,19 @@ fi
 git checkout master
 
 echo -e "Which class is this for?\n"
-echo '0) 00-Beginner-Wednesday'
-echo '1) 01-Intermediate-Monday'
-echo '2) 02-Friday-Nights'
+echo '0) 00-Beginner'
+echo '1) 01-Intermediate'
+echo '2) 02-General_Meetings'
 echo '3) 03-Community'
 echo '4) 04-Conferences_Classes'
 echo 'please enter a number.'
 read class
 case $class in 
-	0) classType='00-Beginner-Wednesday'
+	0) classType='00-Beginner'
 		;;
-	1) classType='01-Intermediate-Monday'
+	1) classType='01-Intermediate'
 		;;
-	2) classType='02-Friday-Nights'
+	2) classType='02-General_Meetings'
 		;;
 	3) classType='03-Community'
 		;;
