@@ -27,13 +27,18 @@ case $class in
 	4) classType='04-Conferences_Classes'
 		;;
 esac
-tmpFolder="$(date +%Y)/${classType}"
+tmpFolder="$( pwd | rev | cut -d '/' -f -3 | rev )"
 num=$(ls | tail -n 1 | cut -d '-' -f 1)
 
 if [[ -z "$num" ]] ; then
 	newNum="00"
 else
-	newNum="0$( expr $num + 1 )"
+	# Future proof numbering of files
+	newNum="$( expr $num + 1 )"
+	if [[ ${#newNum} -eq 1 ]]
+	then
+		newNum="0${newNum}"
+	fi
 fi
 
 name="$1"
@@ -47,5 +52,3 @@ echo -e "# $upperName\n\n" > ${folder}/README.md
 nonTack="$(echo $upperName | tr '-' ' ')"
 
 echo "[$nonTack Slideshow](https://49thsecuritydivision.github.io/slideshows/${tmpFolder}/${folder})" >> ${folder}/README.md
-
-cp -r ${folder} ../all/
