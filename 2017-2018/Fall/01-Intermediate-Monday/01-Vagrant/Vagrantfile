@@ -1,3 +1,3 @@
 Vagrant.configure("2") do |config|
-  config.vm.box = "49thsd/kali-linux-2017.2-amd64"
+  config.vm.box = "elrey741/kali-linux_amd64"
 end
