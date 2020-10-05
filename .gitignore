@@ -1,1 +1,3 @@
 use-github-pages.txt
+*.DS_Store
+*~
