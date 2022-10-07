@@ -1,0 +1,88 @@
+---
+- hosts: tag_Name_NessusServer
+  vars_prompt:
+
+    # - name: nessus_username
+    #   prompt: What is the Nessus UI username?
+    #   private: false
+
+    # - name: nessus_pass
+    #   prompt: What is the password for the Nessus user?
+    #   private: true
+    #   confirm: true
+
+    # - name: nessus_lic
+    #   prompt: what is the license for the Nessus server?
+    #   private: false
+
+    - name: nessus_path
+      prompt: what is the file name of the nessus .deb file in the ./files directory?
+      private: false
+      default: Nessus.deb
+
+  module_defaults:
+
+    ansible.builtin.copy:
+      owner: root
+      group: root
+      mode: '700'
+
+  vars:
+    nessus_dest: '/root/nessus.deb'
+    nessus_install_dir: '/opt/nessus'
+    nessus_cli: '{{ nessus_install_dir }}/sbin/nessuscli'
+  tasks:
+
+    - name: prep tasks
+      ansible.builtin.include_tasks: ../global/ansible/prep-tasks.yml
+
+    - name: copying over nessus
+      ansible.builtin.copy:
+        src: '{{ nessus_path }}'
+        dest: '{{ nessus_dest }}'
+      register: copied
+      become: true
+
+    - name: install nessus
+      ansible.builtin.apt:
+        deb: '{{ nessus_dest }}'
+      when: copied.changed
+      become: true
+
+    - name: enabling nessusd
+      ansible.builtin.service:
+        name: 'nessusd'
+        enabled: true
+        state: started
+      become: true
+
+    # checkout this:
+    # https://docs.ansible.com/ansible/latest/collections/ansible/builtin/expect_module.html
+    # - name: Start nessus container
+    #   community.docker.docker_container:
+    #     name: nessus
+    #     image: tenableofficial/nessus
+    #     state: started
+    #     cpus: 3
+    #     memory: 4G
+    #     networks:
+    #       - nessus_net
+    #     restart_policy: "unless-stopped"
+    #     ports:
+    #      # Mgmt UI
+    #      - "8834:8834"
+    #     env:
+    #         USERNAME: '{{ nessus_username }}'
+    #         PASSWORD: '{{ nessus_pass }}'
+    #         ACTIVATION_CODE: '{{ nessus_lic }}'
+
+# $ curl -fsSL 'https://34.228.13.138:8834/server/status' -k
+#{"code":503,"progress":46,"status":"loading"}
+# $ curl -fsSL 'https://34.228.13.138:8834/server/status' -k
+#{"code":503,"progress":17,"status":"downloading"}
+# $ curl -fsSL 'https://34.228.13.138:8834/server/status' -k
+#{"code":503,"progress":100,"status":"loading"}
+# $ curl -fsSL 'https://34.228.13.138:8834/server/status' -k
+#{"code":503,"progress":null,"status":"register"}
+# $ curl -fsSL 'https://34.228.13.138:8834/server/status' -k
+#{"code":503,"progress":0,"status":"downloading"}
