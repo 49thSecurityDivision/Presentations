@@ -1,0 +1,24 @@
+---
+- hosts: all
+  become: true
+  vars:
+    current_client: '/client_data/current_client/ansible_sync_folder'
+  tasks:
+    - name: backup client directory locally
+      ansible.posix.synchronize:
+        src: /root/clients/
+        dest: '{{ current_client }}/'
+        archive: true
+        mode: pull
+
+    - name: check for root history
+      ansible.builtin.stat:
+        path: /root/.bash_history
+      register: root_history
+
+    - name: backup bash history
+      ansible.builtin.fetch:
+        src: /root/.bash_history
+        dest: '{{ current_client }}/bash_history/{{ inventory_hostname }}-{{ ansible_date_time.date }}'
+        flat: true
+      when: root_history.stat.exists

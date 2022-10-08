@@ -1,0 +1,13 @@
+- name: updating cache
+  apt:
+    update_cache: yes
+    cache_valid_time: 604800
+  become: true
+  register: updated
+
+- name: updating system
+  apt:
+    autoremove: yes
+    autoclean: yes
+    upgrade: dist
+  become: true

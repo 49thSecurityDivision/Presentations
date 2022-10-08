@@ -1,0 +1,16 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+ansible-core = "*"
+boto3 = "*"
+botocore = "*"
+
+[dev-packages]
+ansible-lint = "*"
+awscli = "*"
+
+[requires]
+python_version = "3.9"

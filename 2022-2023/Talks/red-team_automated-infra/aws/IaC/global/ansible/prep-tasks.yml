@@ -1,0 +1,37 @@
+- name: adding all user vars
+  include_vars: ssk-keys.yml
+
+- name: "adding SSH keys"
+  ansible.posix.authorized_key:
+    user: '{{ ansible_user }}'
+    key: '{{ item.key }}'
+  loop: "{{ users }}"
+  loop_control:
+    label: "{{ item.name }}"
+
+- name: create clients dir
+  file:
+    path: /root/clients
+    owner: root
+    group: root
+    mode: '770'
+    state: directory
+  become: true
+
+# - name: sync data to remote host
+#   ansible.posix.synchronize:
+#     src: /client_data/current_client/ansible_sync_folder/
+#     dest: /root/clients/
+#     owner: false
+#     group: false
+#     perms: false
+#     archive: true
+#   become: true
+
+- name: update server
+  ansible.builtin.include_tasks: ./update-tasks.yml
+
+- name: reboot server
+  ansible.builtin.reboot:
+  become: true
+  when: updated.changed
